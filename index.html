@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real time character count</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .container{
+            background-color: rgba(47, 46, 46, 0.473);
+        width:400px;
+        padding:40px;
+        margin:90px 500px;
+        transition:0.3s;
+        border-radius:10px;
+        }
+        textarea{
+            width:100%;
+        }
+        label{
+            color:cadetblue;
+            font-size:30px;
+        }
+        .container:hover{
+            box-shadow:0px 0px 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="real">
+                <label>Real Time Character Counter</label>
+                <br>
+                <br>
+                <textarea id="character" cols="30" rows="5" placeholder="Please type here"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let character = document.getElementById("character");
+    character.addEventListener('input',function(){
+    let value = character.value;
+    let arr = [...value];
+    if (arr.length>150){
+      alert("Input must be less then 150 letters");
+    }
+  });
+  </script>
+</html>
